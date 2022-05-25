@@ -16,9 +16,9 @@ async def DeleteMessages(client: Client, chat_id: int, message_ids: list):
         )
         await client.send_message(
             chat_id=Config.LOGS_CHANNEL,
-            text=f"#DMCA_DELETE:\n"
-                 f"Deleted {str(len(message_ids))} Messages from {str(chat_id)} !!"
+            text=f"#DMCA_DELETE:\nDeleted {len(message_ids)} Messages from {chat_id} !!",
         )
+
         return 200, None
     except FloodWait as e:
         print(f"Sleeping for {e.x}s ...")

@@ -6,7 +6,7 @@ from pyrogram.errors import UserNotParticipant
 
 
 async def ExtractChatData(user: Client, bot: Client, message: Message):
-    message_ids = list()
+    message_ids = []
     if "https://t.me" not in message.text:
         return
     links = list(filter(lambda s: s.startswith("https://t.me"), message.text.split()))
